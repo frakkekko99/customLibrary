@@ -42,7 +42,7 @@ const gameStyles = StyleSheet.create({
     left: "50%",
     height: 100,
     width: 200,
-    transform: [{ translateX: "-50%" }, { translateY: "-50%" }],
+    transform: [{ translateX: -100 }, { translateY: -50 }],
     borderColor: "#fff",
     borderStyle: "solid",
     borderWidth: 1,

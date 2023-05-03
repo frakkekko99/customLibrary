@@ -1,12 +1,10 @@
 import React from "react";
-import { View, Text, Platform, Image } from "react-native";
+import { View, Image } from "react-native";
 import choiceStyles from "./choiceStyle";
 
-import { Player } from "@lottiefiles/react-lottie-player";
-
-import rock from "../../assets/rock.png";
-import paper from "../../assets/paper.png";
-import scissors from "../../assets/scissors.png";
+import rock from "../assets/rock.png";
+import paper from "../assets/paper.png";
+import scissors from "../assets/scissors.png";
 
 //carta = 0
 //forbice = 1

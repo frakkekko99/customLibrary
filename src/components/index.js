@@ -1,5 +1,7 @@
 import ButtonDefault from "./buttonDefault/ButtonDefault";
-import TextInputDefault from './textInputDefault/TextInputDefault';
-import LeaderBoard from './leaderBoard/LeaderBoard';
+import TextInputDefault from "./textInputDefault/TextInputDefault";
+import LeaderBoard from "./leaderBoard/LeaderBoard";
 
-export { ButtonDefault, TextInputDefault, LeaderBoard };
+import Game from "./game/Game";
+
+export { ButtonDefault, TextInputDefault, LeaderBoard, Game };

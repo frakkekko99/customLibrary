@@ -41,9 +41,9 @@ const gameStyles = StyleSheet.create({
     height: 100,
     width: 200,
     transform: [{
-      translateX: "-50%"
+      translateX: -100
     }, {
-      translateY: "-50%"
+      translateY: -50
     }],
     borderColor: "#fff",
     borderStyle: "solid",
