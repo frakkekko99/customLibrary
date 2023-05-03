@@ -1,2 +1,4 @@
 import ButtonDefault from "./buttonDefault/ButtonDefault";
-export { ButtonDefault };
+import TextInputDefault from './textInputDefault/TextInputDefault';
+import LeaderBoard from './leaderBoard/LeaderBoard';
+export { ButtonDefault, TextInputDefault, LeaderBoard };
