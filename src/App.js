@@ -13,7 +13,9 @@ function App() {
 
   return (
     <View style={{ flex: 1 }}>
-      <Game />
+      <View style={{ justifyContent: "center", alignItems: "center" }}>
+        <Game />
+      </View>
     </View>
   );
 }

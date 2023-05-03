@@ -12,8 +12,6 @@ import scissors from "../../assets/scissors.png";
 //forbice = 1
 //sasso = 2
 
-console.log(Platform.OS);
-
 function Choice(props) {
   return (
     <View style={choiceStyles.mainContainer}>
