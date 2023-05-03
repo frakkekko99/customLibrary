@@ -8,7 +8,7 @@ import Choice from "../choice/Choice";
 //forbice = 1
 //sasso = 2
 
-function Game() {
+function Game(props) {
   let resultMatrix = [[0, -1, 1], [1, 0, -1], [-1, 1, 0]];
   let [userChoice, setUserChoice] = useState(null);
   let [cpuChoice, setCpuChoice] = useState(null);
@@ -29,18 +29,37 @@ function Game() {
     if (roundWinner === -1) cpuWinCounterRef.current++;
     let winnerMessage = "";
     if (turnResultRef.current.length === 3) {
+      let winnerObj = {
+        name: props.userName
+      };
       if (userWinCounterRef.current > cpuWinCounterRef.current) {
         console.log("User wins");
-        winnerMessage = "User Wins, +150";
+        winnerMessage = `${props.userName} wins, +150`;
         userScoreRef.current += 150;
+        winnerObj = {
+          ...winnerObj,
+          result: "win",
+          score: 150
+        };
       } else if (userWinCounterRef.current < cpuWinCounterRef.current) {
         console.log("Cpu wins");
-        winnerMessage = "User Lose, -50";
+        winnerMessage = `${props.userName} loses, -50`;
         userScoreRef.current -= 50;
+        winnerObj = {
+          ...winnerObj,
+          result: "lose",
+          score: -50
+        };
       } else {
         console.log("Tie");
         winnerMessage = "Tie";
+        winnerObj = {
+          ...winnerObj,
+          result: "tie",
+          score: 0
+        };
       }
+      props.onGameEnd(winnerObj);
       userChoiceRef.current = null;
       turnResultRef.current = [];
       userWinCounterRef.current = 0;
@@ -78,7 +97,7 @@ function Game() {
     style: gameStyles.turnResult
   }, winnerMessage === "" && /*#__PURE__*/React.createElement(Text, {
     style: gameStyles.text
-  }, "Utente:", " ", /*#__PURE__*/React.createElement(Text, {
+  }, props.userName, ":", " ", /*#__PURE__*/React.createElement(Text, {
     style: gameStyles.textRoundCounter
   }, userWinCounter), " ", "- CPU:", " ", /*#__PURE__*/React.createElement(Text, {
     style: gameStyles.textRoundCounter

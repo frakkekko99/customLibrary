@@ -1,8 +1,8 @@
-import React from 'react';
-import { View, Text, FlatList } from 'react-native';
+import React from "react";
+import { View, Text, FlatList } from "react-native";
 
 // Style
-import styleLeaderBoard from './leaderBoardStyle';
+import styleLeaderBoard from "./leaderBoardStyle";
 const users = [{
   name: "Luigi",
   id: Math.floor(Math.random() * 100000),
@@ -17,9 +17,9 @@ const users = [{
   score: 20
 }];
 function mapUsersList(data) {
-  // console.log("data", data)
-  return /*#__PURE__*/React.createElement(View, null, /*#__PURE__*/React.createElement(View, {
-    key: data.item.id,
+  //   console.log("data", data.index);
+  return /*#__PURE__*/React.createElement(View, {
+    key: "00" + data.index,
     style: styleLeaderBoard.row
   }, /*#__PURE__*/React.createElement(Text, {
     style: styleLeaderBoard.text
@@ -27,7 +27,7 @@ function mapUsersList(data) {
     style: styleLeaderBoard.name
   }, data.item.name)), /*#__PURE__*/React.createElement(Text, null, "Score:", /*#__PURE__*/React.createElement(Text, {
     style: styleLeaderBoard.score
-  }, data.item.score))));
+  }, data.item.score)));
 }
 function LeaderBoard() {
   return /*#__PURE__*/React.createElement(View, {
@@ -39,7 +39,7 @@ function LeaderBoard() {
   }, "Rank")), /*#__PURE__*/React.createElement(FlatList, {
     data: users,
     renderItem: mapUsersList,
-    keyExtractor: item => item.id
+    keyExtractor: (item, index) => index
   }));
 }
 export default LeaderBoard;
