@@ -1,6 +1,7 @@
 
 // Components
 import ButtonDefault from "./components/buttonDefault/ButtonDefault";
+import LeaderBoard from './components/leaderBoard/LeaderBoard';
 import TextInputDefault from './components/textInputDefault/TextInputDefault';
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
         placeholderInput="write your name"
         handleInput={ inputName }
       />
+
+      <LeaderBoard />
 
     </div>
   );
