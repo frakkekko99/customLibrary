@@ -17,6 +17,9 @@ function Game() {
 
   let [userChoice, setUserChoice] = useState(null);
   let [cpuChoice, setCpuChoice] = useState(null);
+  let [userWinCounter, setUserWinCounter] = useState(0);
+  let [cpuWinCounter, setCpuWinCounter] = useState(0);
+  let [winnerMessage, setWinnerMessage] = useState("");
 
   let userChoiceRef = useRef(null);
   let turnResultRef = useRef([]);
@@ -37,17 +40,33 @@ function Game() {
     if (roundWinner === 1) userWinCounterRef.current++;
     if (roundWinner === -1) cpuWinCounterRef.current++;
 
+    let winnerMessage = "";
+
     if (turnResultRef.current.length === 3) {
       if (userWinCounterRef.current > cpuWinCounterRef.current) {
         console.log("User wins");
+        winnerMessage = "User Wins, +150";
         userScoreRef.current += 150;
       } else if (userWinCounterRef.current < cpuWinCounterRef.current) {
         console.log("Cpu wins");
+        winnerMessage = "User Lose, -50";
         userScoreRef.current -= 50;
       } else {
         console.log("Tie");
+        winnerMessage = "Tie";
       }
+
+      userChoiceRef.current = null;
+      turnResultRef.current = [];
+      userWinCounterRef.current = 0;
+      cpuWinCounterRef.current = 0;
     }
+
+    console.log("UserScore:", userScoreRef.current);
+
+    setCpuWinCounter(cpuWinCounterRef.current);
+    setUserWinCounter(userWinCounterRef.current);
+    setWinnerMessage(winnerMessage);
   }
 
   function setRock() {
@@ -73,7 +92,21 @@ function Game() {
       <View style={gameStyles.internalWrapper}>
         <View style={gameStyles.choiceContainer}>
           <Choice inputChoice={cpuChoice} />
-          <View style={gameStyles.turnResult}></View>
+          <View style={gameStyles.turnResult}>
+            {winnerMessage === "" && (
+              <Text style={gameStyles.text}>
+                Utente:{" "}
+                <Text style={gameStyles.textRoundCounter}>
+                  {userWinCounter}
+                </Text>{" "}
+                - CPU:{" "}
+                <Text style={gameStyles.textRoundCounter}>{cpuWinCounter}</Text>
+              </Text>
+            )}
+            {winnerMessage !== "" && (
+              <Text style={gameStyles.textWinnerMsg}>{winnerMessage}</Text>
+            )}
+          </View>
           <Choice inputChoice={userChoice} />
         </View>
         <View style={gameStyles.choiseButtonContainer}>

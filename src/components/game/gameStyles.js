@@ -47,6 +47,22 @@ const gameStyles = StyleSheet.create({
     borderStyle: "solid",
     borderWidth: 1,
     borderRadius: 20,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  text: {
+    fontSize: 18,
+    color: "#fff",
+  },
+  textRoundCounter: {
+    color: "#61dafb",
+    fontWeight: 600,
+    fontSize: 22,
+  },
+  textWinnerMsg: {
+    fontSize: 20,
+    fontWeight: 600,
+    color: "#fff",
   },
 });
 
