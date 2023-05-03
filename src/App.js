@@ -7,6 +7,10 @@ function App() {
     console.log("Hello");
   };
 
+  function inputName(e) {
+    console.log("input", e);
+  }
+
   return (
     <View style={{ flex: 1 }}>
       <Game />
