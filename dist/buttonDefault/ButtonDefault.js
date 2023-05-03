@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Pressable } from "react-native-web";
+import { Text, Pressable } from "react-native";
 import buttonDefaultStyles from "./buttonDefalutStyles";
 import PropTypes from "prop-types";
 function ButtonDefault(props) {
