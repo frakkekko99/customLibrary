@@ -1,7 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import ButtonDefault from "./components/buttonDefault/ButtonDefault";
 
 function App() {
+  const sayHello = () => {
+    console.log("Hello");
+  };
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +21,7 @@ function App() {
         >
           Learn React
         </a>
+        <ButtonDefault label={"Custom Button"} onButtonPressed={sayHello} />
       </header>
     </div>
   );
