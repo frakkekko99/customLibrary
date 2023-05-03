@@ -8,7 +8,7 @@ import Choice from "../choice/Choice";
 //forbice = 1
 //sasso = 2
 
-function Game() {
+function Game(props) {
   let resultMatrix = [
     [0, -1, 1],
     [1, 0, -1],
@@ -43,18 +43,25 @@ function Game() {
     let winnerMessage = "";
 
     if (turnResultRef.current.length === 3) {
+      let winnerObj = { name: props.userName };
+
       if (userWinCounterRef.current > cpuWinCounterRef.current) {
         console.log("User wins");
-        winnerMessage = "User Wins, +150";
+        winnerMessage = `${props.userName} wins, +150`;
         userScoreRef.current += 150;
+        winnerObj = { ...winnerObj, result: "win", score: 150 };
       } else if (userWinCounterRef.current < cpuWinCounterRef.current) {
         console.log("Cpu wins");
-        winnerMessage = "User Lose, -50";
+        winnerMessage = `${props.userName} loses, -50`;
         userScoreRef.current -= 50;
+        winnerObj = { ...winnerObj, result: "lose", score: -50 };
       } else {
         console.log("Tie");
         winnerMessage = "Tie";
+        winnerObj = { ...winnerObj, result: "tie", score: 0 };
       }
+
+      props.onGameEnd(winnerObj);
 
       userChoiceRef.current = null;
       turnResultRef.current = [];
@@ -95,7 +102,7 @@ function Game() {
           <View style={gameStyles.turnResult}>
             {winnerMessage === "" && (
               <Text style={gameStyles.text}>
-                Utente:{" "}
+                {props.userName}:{" "}
                 <Text style={gameStyles.textRoundCounter}>
                   {userWinCounter}
                 </Text>{" "}
