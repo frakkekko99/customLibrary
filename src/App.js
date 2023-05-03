@@ -1,20 +1,16 @@
-
+import { View } from "react-native";
 import ButtonDefault from "./components/buttonDefault/ButtonDefault";
+import Game from "./components/game/Game";
 
 function App() {
-
   const sayHello = () => {
     console.log("Hello");
   };
 
   return (
-    <div className="App">
-
-
-      <ButtonDefault label={ "Custom Button" } onButtonPressed={ sayHello } />
-
-
-    </div>
+    <View style={{ flex: 1 }}>
+      <Game />
+    </View>
   );
 }
 
