@@ -29,9 +29,7 @@ function LeaderBoard(props) {
     style: styleLeaderBoard.containerTitle
   }, /*#__PURE__*/React.createElement(Text, {
     style: styleLeaderBoard.title
-  }, "Rank")), /*#__PURE__*/React.createElement(View, {
-    style: styleLeaderBoard.flatListWrapper
-  }, /*#__PURE__*/React.createElement(FlatList, {
+  }, "Rank")), /*#__PURE__*/React.createElement(FlatList, {
     data: props.users.sort(({
       score: a
     }, {
@@ -39,7 +37,7 @@ function LeaderBoard(props) {
     }) => b - a),
     renderItem: mapUsersList,
     keyExtractor: extractKey
-  })));
+  }));
 }
 LeaderBoard.defaultProps = {
   users: []

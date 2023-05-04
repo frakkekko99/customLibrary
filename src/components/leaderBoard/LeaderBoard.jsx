@@ -43,13 +43,13 @@ function LeaderBoard(props) {
           />
         </View>
       )} */}
-      <View style={styleLeaderBoard.flatListWrapper}>
-        <FlatList
-          data={props.users.sort(({ score: a }, { score: b }) => b - a)}
-          renderItem={mapUsersList}
-          keyExtractor={extractKey}
-        />
-      </View>
+      {/* <View style={styleLeaderBoard.flatListWrapper}> */}
+      <FlatList
+        data={props.users.sort(({ score: a }, { score: b }) => b - a)}
+        renderItem={mapUsersList}
+        keyExtractor={extractKey}
+      />
+      {/* </View> */}
     </View>
   );
 }
