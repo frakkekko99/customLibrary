@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, Platform } from "react-native";
 import PropTypes from "prop-types";
 
 // Style
@@ -10,14 +10,10 @@ function LeaderBoard(props) {
     //   console.log("data", data.index);
     return (
       <View key={"00" + data.index} style={styleLeaderBoard.row}>
-        <Text style={styleLeaderBoard.text}>
-          Name:
-          <Text style={styleLeaderBoard.name}>{data.item.name}</Text>
-        </Text>
-        <Text style={styleLeaderBoard.scoreContainer}>
-          Score:
-          <Text style={styleLeaderBoard.score}>{data.item.score}</Text>
-        </Text>
+        <Text style={styleLeaderBoard.text}>Name:</Text>
+        <Text style={styleLeaderBoard.name}>{data.item.name}</Text>
+        <Text style={styleLeaderBoard.scoreContainer}>Score:</Text>
+        <Text style={styleLeaderBoard.score}>{data.item.score}</Text>
       </View>
     );
   }
@@ -31,11 +27,29 @@ function LeaderBoard(props) {
         <Text style={styleLeaderBoard.title}>Rank</Text>
       </View>
 
-      <FlatList
-        data={props.users.sort(({ score: a }, { score: b }) => b - a)}
-        renderItem={mapUsersList}
-        keyExtractor={extractKey}
-      />
+      {/* {Platform.OS !== "web" && (
+        <FlatList
+          data={props.users.sort(({ score: a }, { score: b }) => b - a)}
+          renderItem={mapUsersList}
+          keyExtractor={extractKey}
+        />
+      )}
+      {Platform.OS === "web" && (
+        <View style={styleLeaderBoard.flatListWrapper}>
+          <FlatList
+            data={props.users.sort(({ score: a }, { score: b }) => b - a)}
+            renderItem={mapUsersList}
+            keyExtractor={extractKey}
+          />
+        </View>
+      )} */}
+      <View style={styleLeaderBoard.flatListWrapper}>
+        <FlatList
+          data={props.users.sort(({ score: a }, { score: b }) => b - a)}
+          renderItem={mapUsersList}
+          keyExtractor={extractKey}
+        />
+      </View>
     </View>
   );
 }

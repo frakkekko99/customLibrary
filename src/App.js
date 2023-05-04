@@ -36,15 +36,25 @@ function App() {
   }
 
   return (
-    <View style={{ flex: 1, height: "100vh", backgroundColor: "#282c34" }}>
-      <View style={{ justifyContent: "center", alignItems: "center" }}>
+    <View
+      style={{
+        flex: 1,
+        height: "100vh",
+        backgroundColor: "#282c34",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <View
+        style={{ width: 260, justifyContent: "center", alignItems: "center" }}
+      >
         {/* <Game userName="fra" onGameEnd={display} /> */}
-        {/* <LeaderBoard users={users} /> */}
-        <TextInputDefault
+        <LeaderBoard users={users} />
+        {/* <TextInputDefault
           labelInput={"Username"}
           placeholderInput={"Insert username"}
           handleInput={() => console.log("input")}
-        />
+        /> */}
       </View>
     </View>
   );
