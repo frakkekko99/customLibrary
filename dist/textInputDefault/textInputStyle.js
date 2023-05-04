@@ -7,8 +7,7 @@ const textInputStyle = StyleSheet.create({
     textAlign: "center",
     padding: 10,
     borderRadius: 6,
-    fontSize: 18,
-    outlineColor: "#61dafb"
+    fontSize: 18
   },
   label: {
     marginBottom: 10,

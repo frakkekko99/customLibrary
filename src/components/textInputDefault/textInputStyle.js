@@ -9,7 +9,6 @@ const textInputStyle = StyleSheet.create({
     padding: 10,
     borderRadius: 6,
     fontSize: 18,
-    outlineColor: "#61dafb",
   },
   label: {
     marginBottom: 10,
