@@ -15,13 +15,13 @@ function Choice(props) {
   return (
     <View style={choiceStyles.mainContainer}>
       {props.inputChoice === 0 && (
-        <Image source={paper} style={{ width: 150, height: 150 }} />
+        <Image source={paper} style={choiceStyles.image} />
       )}
       {props.inputChoice === 1 && (
-        <Image source={scissors} style={{ width: 150, height: 150 }} />
+        <Image source={scissors} style={choiceStyles.image} />
       )}
       {props.inputChoice === 2 && (
-        <Image source={rock} style={{ width: 150, height: 150 }} />
+        <Image source={rock} style={choiceStyles.image} />
       )}
     </View>
   );
