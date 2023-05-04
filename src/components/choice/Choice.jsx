@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Image } from "react-native";
 import choiceStyles from "./choiceStyle";
+import PropTypes from "prop-types";
 
 import rock from "../assets/rock.png";
 import paper from "../assets/paper.png";
@@ -25,5 +26,9 @@ function Choice(props) {
     </View>
   );
 }
+
+Choice.propTypes = {
+  inputChoice: PropTypes.number,
+};
 
 export default Choice;

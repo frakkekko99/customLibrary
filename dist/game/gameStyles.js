@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet, Dimensions, Platform } from "react-native";
 const gameStyles = StyleSheet.create({
   mainContainer: {
     width: Dimensions.get("window").width * 0.9,

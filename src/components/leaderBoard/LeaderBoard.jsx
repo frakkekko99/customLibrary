@@ -1,44 +1,30 @@
 import React from "react";
 import { View, Text, FlatList } from "react-native";
+import PropTypes from "prop-types";
 
 // Style
 import styleLeaderBoard from "./leaderBoardStyle";
 
-const users = [
-  {
-    name: "Luigi",
-    id: Math.floor(Math.random() * 100000),
-    score: 10,
-  },
-  {
-    name: "Fra",
-    id: Math.floor(Math.random() * 100000),
-    score: 15,
-  },
-  {
-    name: "Paolo",
-    id: Math.floor(Math.random() * 100000),
-    score: 20,
-  },
-];
+function LeaderBoard(props) {
+  function mapUsersList(data) {
+    //   console.log("data", data.index);
+    return (
+      <View key={"00" + data.index} style={styleLeaderBoard.row}>
+        <Text style={styleLeaderBoard.text}>
+          Name:
+          <Text style={styleLeaderBoard.name}>{data.item.name}</Text>
+        </Text>
+        <Text style={styleLeaderBoard.scoreContainer}>
+          Score:
+          <Text style={styleLeaderBoard.score}>{data.item.score}</Text>
+        </Text>
+      </View>
+    );
+  }
 
-function mapUsersList(data) {
-  //   console.log("data", data.index);
-  return (
-    <View key={"00" + data.index} style={styleLeaderBoard.row}>
-      <Text style={styleLeaderBoard.text}>
-        Name:
-        <Text style={styleLeaderBoard.name}>{data.item.name}</Text>
-      </Text>
-      <Text>
-        Score:
-        <Text style={styleLeaderBoard.score}>{data.item.score}</Text>
-      </Text>
-    </View>
-  );
-}
-
-function LeaderBoard() {
+  function extractKey(item, index) {
+    return "00" + index;
+  }
   return (
     <View style={styleLeaderBoard.container}>
       <View style={styleLeaderBoard.containerTitle}>
@@ -46,12 +32,20 @@ function LeaderBoard() {
       </View>
 
       <FlatList
-        data={users}
+        data={props.users.sort(({ score: a }, { score: b }) => b - a)}
         renderItem={mapUsersList}
-        keyExtractor={(item, index) => index}
+        keyExtractor={extractKey}
       />
     </View>
   );
 }
+
+LeaderBoard.defaultProps = {
+  users: [],
+};
+
+LeaderBoard.propTypes = {
+  users: PropTypes.arrayOf(PropTypes.object),
+};
 
 export default LeaderBoard;

@@ -3,6 +3,7 @@ import { View, Text } from "react-native";
 import gameStyles from "./gameStyles";
 import ButtonDefault from "../buttonDefault/ButtonDefault";
 import Choice from "../choice/Choice";
+import PropTypes from "prop-types";
 
 //carta = 0
 //forbice = 1
@@ -118,4 +119,13 @@ function Game(props) {
     onButtonPressed: setScissors
   }))));
 }
+Game.defaultProps = {
+  onGameEnd: () => {
+    console.log("Game Over");
+  }
+};
+Game.propTypes = {
+  userName: PropTypes.string.isRequired,
+  onGameEnd: PropTypes.func
+};
 export default Game;
