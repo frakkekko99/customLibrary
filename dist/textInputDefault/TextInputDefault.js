@@ -1,8 +1,8 @@
-import React from 'react';
-import { TextInput, View, Text } from 'react-native';
+import React from "react";
+import { TextInput, View, Text } from "react-native";
 
 // Style
-import textInputStyle from './textInputStyle';
+import textInputStyle from "./textInputStyle";
 
 // PropTypes
 import PropTypes from "prop-types";
@@ -17,7 +17,8 @@ function TextInputDefault(props) {
   }, props.labelInput), /*#__PURE__*/React.createElement(TextInput, {
     style: textInputStyle.default,
     onChangeText: callback,
-    placeholder: props.placeholderInput
+    placeholder: props.placeholderInput,
+    placeholderTextColor: "#ccc"
   }));
 }
 TextInputDefault.defaultProps = {

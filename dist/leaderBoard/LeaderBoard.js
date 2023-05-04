@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, Platform } from "react-native";
 import PropTypes from "prop-types";
 
 // Style
@@ -12,13 +12,13 @@ function LeaderBoard(props) {
       style: styleLeaderBoard.row
     }, /*#__PURE__*/React.createElement(Text, {
       style: styleLeaderBoard.text
-    }, "Name:", /*#__PURE__*/React.createElement(Text, {
+    }, "Name:"), /*#__PURE__*/React.createElement(Text, {
       style: styleLeaderBoard.name
-    }, data.item.name)), /*#__PURE__*/React.createElement(Text, {
+    }, data.item.name), /*#__PURE__*/React.createElement(Text, {
       style: styleLeaderBoard.scoreContainer
-    }, "Score:", /*#__PURE__*/React.createElement(Text, {
+    }, "Score:"), /*#__PURE__*/React.createElement(Text, {
       style: styleLeaderBoard.score
-    }, data.item.score)));
+    }, data.item.score));
   }
   function extractKey(item, index) {
     return "00" + index;
@@ -29,7 +29,9 @@ function LeaderBoard(props) {
     style: styleLeaderBoard.containerTitle
   }, /*#__PURE__*/React.createElement(Text, {
     style: styleLeaderBoard.title
-  }, "Rank")), /*#__PURE__*/React.createElement(FlatList, {
+  }, "Rank")), /*#__PURE__*/React.createElement(View, {
+    style: styleLeaderBoard.flatListWrapper
+  }, /*#__PURE__*/React.createElement(FlatList, {
     data: props.users.sort(({
       score: a
     }, {
@@ -37,7 +39,7 @@ function LeaderBoard(props) {
     }) => b - a),
     renderItem: mapUsersList,
     keyExtractor: extractKey
-  }));
+  })));
 }
 LeaderBoard.defaultProps = {
   users: []

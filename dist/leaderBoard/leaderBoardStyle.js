@@ -3,7 +3,7 @@ const styleLeaderBoard = StyleSheet.create({
   container: {
     backgroundColor: "#282c34",
     padding: 20,
-    maxWidth: 320,
+    width: "100%",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 20,
@@ -25,7 +25,6 @@ const styleLeaderBoard = StyleSheet.create({
   },
   text: {
     fontSize: 18,
-    marginRight: 10,
     color: "#fff"
   },
   containerTitle: {
@@ -39,18 +38,26 @@ const styleLeaderBoard = StyleSheet.create({
     color: "#fff"
   },
   name: {
+    fontSize: 18,
     marginLeft: 5,
     fontWeight: "bold",
-    color: "#fff"
+    color: "#61dafb"
   },
   scoreContainer: {
     fontSize: 18,
-    color: "#fff"
+    color: "#fff",
+    marginLeft: 15
   },
   score: {
     marginLeft: 5,
     fontWeight: "bold",
-    color: "#fff"
+    color: "#61dafb",
+    fontSize: 18
+  },
+  flatListWrapper: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
   }
 });
 export default styleLeaderBoard;

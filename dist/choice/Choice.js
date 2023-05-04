@@ -15,22 +15,13 @@ function Choice(props) {
     style: choiceStyles.mainContainer
   }, props.inputChoice === 0 && /*#__PURE__*/React.createElement(Image, {
     source: paper,
-    style: {
-      width: 150,
-      height: 150
-    }
+    style: choiceStyles.image
   }), props.inputChoice === 1 && /*#__PURE__*/React.createElement(Image, {
     source: scissors,
-    style: {
-      width: 150,
-      height: 150
-    }
+    style: choiceStyles.image
   }), props.inputChoice === 2 && /*#__PURE__*/React.createElement(Image, {
     source: rock,
-    style: {
-      width: 150,
-      height: 150
-    }
+    style: choiceStyles.image
   }));
 }
 Choice.propTypes = {

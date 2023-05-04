@@ -25,7 +25,8 @@ const gameStyles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    padding: 20
+    padding: 10,
+    gap: 10
   },
   choiceContainer: {
     position: "relative",
