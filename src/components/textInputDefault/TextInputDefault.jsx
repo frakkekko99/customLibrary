@@ -1,42 +1,38 @@
-import React from 'react'
-import { TextInput, View, Text } from 'react-native'
+import React from "react";
+import { TextInput, View, Text } from "react-native";
 
 // Style
-import textInputStyle from './textInputStyle'
+import textInputStyle from "./textInputStyle";
 
 // PropTypes
 import PropTypes from "prop-types";
 
-
 function TextInputDefault(props) {
+  function callback(e) {
+    props.handleInput(e);
+    // console.log(e)
+  }
+  return (
+    <View>
+      <Text style={textInputStyle.label}>{props.labelInput}</Text>
 
-    function callback(e) {
-        props.handleInput(e)
-        // console.log(e)
-    }
-    return (
-
-        <View>
-            <Text style={ textInputStyle.label }>
-                { props.labelInput }
-            </Text>
-
-            <TextInput
-                style={ textInputStyle.default }
-                onChangeText={ callback }
-                placeholder={ props.placeholderInput }
-            />
-        </View>
-    )
+      <TextInput
+        style={textInputStyle.default}
+        onChangeText={callback}
+        placeholder={props.placeholderInput}
+        placeholderTextColor={"#ccc"}
+      />
+    </View>
+  );
 }
 
 TextInputDefault.defaultProps = {
-    labelInput: "Write your name",
+  labelInput: "Write your name",
 };
 
 TextInputDefault.propTypes = {
-    labelInput: PropTypes.string,
-    handleInput: PropTypes.func.isRequired,
+  labelInput: PropTypes.string,
+  handleInput: PropTypes.func.isRequired,
 };
 
-export default TextInputDefault
+export default TextInputDefault;

@@ -2,6 +2,7 @@ import { View } from "react-native";
 import ButtonDefault from "./components/buttonDefault/ButtonDefault";
 import Game from "./components/game/Game";
 import LeaderBoard from "./components/leaderBoard/LeaderBoard";
+import TextInputDefault from "./components/textInputDefault/TextInputDefault";
 
 const users = [
   {
@@ -35,10 +36,15 @@ function App() {
   }
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, height: "100vh", backgroundColor: "#282c34" }}>
       <View style={{ justifyContent: "center", alignItems: "center" }}>
-        <Game userName="fra" onGameEnd={display} />
+        {/* <Game userName="fra" onGameEnd={display} /> */}
         {/* <LeaderBoard users={users} /> */}
+        <TextInputDefault
+          labelInput={"Username"}
+          placeholderInput={"Insert username"}
+          handleInput={() => console.log("input")}
+        />
       </View>
     </View>
   );
