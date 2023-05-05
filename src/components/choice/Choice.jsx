@@ -1,15 +1,16 @@
 import React from "react";
 import { View, Image } from "react-native";
+
+// Styles
 import choiceStyles from "./choiceStyle";
+
+// Prop Types
 import PropTypes from "prop-types";
 
+// Images
 import rock from "../assets/rock.png";
 import paper from "../assets/paper.png";
 import scissors from "../assets/scissors.png";
-
-//carta = 0
-//forbice = 1
-//sasso = 2
 
 function Choice(props) {
   return (

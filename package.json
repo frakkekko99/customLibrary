@@ -1,6 +1,6 @@
 {
   "name": "@frakkekko99/custom-library",
-  "version": "2.1.5",
+  "version": "2.1.6",
   "main": "dist/index.js",
   "private": false,
   "babel": {
@@ -9,8 +9,6 @@
     ]
   },
   "dependencies": {
-    "@lottiefiles/lottie-player": "^1.7.1",
-    "@lottiefiles/react-lottie-player": "^3.5.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",

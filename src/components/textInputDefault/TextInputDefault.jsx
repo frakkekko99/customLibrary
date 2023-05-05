@@ -6,12 +6,10 @@ import textInputStyle from "./textInputStyle";
 
 // PropTypes
 import PropTypes from "prop-types";
-import { Platform } from "react-native-web";
 
 function TextInputDefault(props) {
   function callback(e) {
     props.handleInput(e);
-    // console.log(e)
   }
   return (
     <View>
@@ -29,6 +27,7 @@ function TextInputDefault(props) {
 
 TextInputDefault.defaultProps = {
   labelInput: "Write your name",
+  placeholderInput: "Write your name",
 };
 
 TextInputDefault.propTypes = {

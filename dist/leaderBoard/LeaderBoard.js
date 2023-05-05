@@ -1,12 +1,11 @@
 import React from "react";
-import { View, Text, FlatList, Platform } from "react-native";
+import { View, Text, FlatList } from "react-native";
 import PropTypes from "prop-types";
 
 // Style
 import styleLeaderBoard from "./leaderBoardStyle";
 function LeaderBoard(props) {
   function mapUsersList(data) {
-    //   console.log("data", data.index);
     return /*#__PURE__*/React.createElement(View, {
       key: "00" + data.index,
       style: styleLeaderBoard.row

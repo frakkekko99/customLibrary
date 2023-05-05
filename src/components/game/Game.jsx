@@ -1,13 +1,15 @@
 import React, { useRef, useState } from "react";
 import { View, Text } from "react-native";
+
+// Styles
 import gameStyles from "./gameStyles";
+
+// Components
 import ButtonDefault from "../buttonDefault/ButtonDefault";
 import Choice from "../choice/Choice";
-import PropTypes from "prop-types";
 
-//carta = 0
-//forbice = 1
-//sasso = 2
+// Prop Types
+import PropTypes from "prop-types";
 
 function Game(props) {
   let resultMatrix = [

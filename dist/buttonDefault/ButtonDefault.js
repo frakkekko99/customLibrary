@@ -1,6 +1,10 @@
 import React from "react";
 import { Text, Pressable } from "react-native";
+
+// Styles
 import buttonDefaultStyles from "./buttonDefalutStyles";
+
+// Prop Types
 import PropTypes from "prop-types";
 function ButtonDefault(props) {
   const onButtonPressed = e => {
