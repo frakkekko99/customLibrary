@@ -25,10 +25,12 @@ const gameStyles = StyleSheet.create({
   choiseButtonContainer: {
     width: "100%",
     flexDirection: "row",
+    flexWrap: "wrap",
     justifyContent: "space-around",
     alignItems: "center",
     padding: 10,
     gap: 10,
+    rowGap: 20,
   },
   choiceContainer: {
     position: "relative",
